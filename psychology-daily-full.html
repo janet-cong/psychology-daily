@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球心理学动态日报 - 2026年3月22日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 30px;
+        }
+        .container { 
+            max-width: 1300px; 
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 28px;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 30px;
+            height: fit-content;
+        }
+        .logo-box {
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            border-radius: 20px;
+            padding: 28px 22px;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 15px 40px rgba(0,210,255,0.3);
+        }
+        .logo-box h1 { font-size: 1.4em; margin-bottom: 8px; }
+        .logo-box .subtitle { font-size: 0.92em; opacity: 0.9; }
+        .logo-box .tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        
+        .toc {
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(15px);
+            border-radius: 18px;
+            padding: 22px;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .toc h3 { color: white; margin-bottom: 16px; font-size: 1.05em; text-align: center; }
+        .toc a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: block;
+            padding: 11px 14px;
+            border-radius: 10px;
+            margin-bottom: 7px;
+            transition: all 0.3s;
+            font-size: 0.93em;
+        }
+        .toc a:hover { 
+            background: rgba(0,210,255,0.2); 
+            color: white;
+            padding-left: 18px;
+        }
+        
+        .main-content {
+            min-width: 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 22px;
+            padding: 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 18px 55px rgba(0,0,0,0.18);
+        }
+        .card h2 {
+            color: #1a1a2e;
+            border-bottom: 4px solid #00d2ff;
+            padding-bottom: 14px;
+            margin-bottom: 22px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+        
+        .section { margin-bottom: 26px; }
+        .section h3 { 
+            color: #16213e; 
+            margin-bottom: 14px; 
+            font-size: 1.08em; 
+            border-left: 4px solid #00d2ff; 
+            padding-left: 12px;
+            background: linear-gradient(90deg, rgba(0,210,255,0.1), transparent);
+            padding: 10px 12px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .topic-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 16px;
+            border-left: 5px solid #00d2ff;
+        }
+        .topic-item h4 {
+            color: #16213e;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .topic-item .summary {
+            background: white;
+            padding: 14px 16px;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            font-size: 0.92em;
+            line-height: 1.7;
+            color: #444;
+            border-left: 3px solid #ddd;
+        }
+        .topic-item .link-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        .topic-item .link-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .topic-item .titles {
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 16px 18px;
+            border-radius: 12px;
+            margin-top: 14px;
+        }
+        .topic-item .titles h5 {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+        .topic-item .titles ul {
+            padding-left: 18px;
+            font-size: 0.88em;
+        }
+        .topic-item .titles li {
+            margin-bottom: 5px;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 14px;
+        }
+        .info-card h4 {
+            font-size: 1.05em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+        .info-card .summary {
+            font-size: 0.9em;
+            line-height: 1.6;
+            opacity: 0.92;
+            margin-bottom: 12px;
+        }
+        .info-card .opportunity {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-size: 0.88em;
+        }
+        .info-card .opportunity strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffd700;
+        }
+        
+        .startup-card {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            color: white;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 14px;
+        }
+        .startup-card h4 {
+            font-size: 1.05em;
+            margin-bottom: 10px;
+        }
+        .startup-card .summary {
+            font-size: 0.9em;
+            line-height: 1.6;
+            opacity: 0.92;
+            margin-bottom: 12px;
+        }
+        .startup-card .inspiration {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-size: 0.88em;
+        }
+        .startup-card .inspiration strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .debate-card {
+            background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            color: white;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 14px;
+        }
+        .debate-card h4 {
+            font-size: 1.05em;
+            margin-bottom: 10px;
+        }
+        .debate-card .summary {
+            font-size: 0.9em;
+            line-height: 1.6;
+            opacity: 0.92;
+            margin-bottom: 12px;
+        }
+        .debate-card .controversy {
+            background: rgba(255,255,255,0.15);
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-size: 0.88em;
+        }
+        .debate-card .controversy strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffd700;
+        }
+        
+        .viz-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .viz-card {
+            background: #f8f9fa;
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+        }
+        .viz-card h4 { color: #16213e; margin-bottom: 12px; font-size: 1em; }
+        
+        .stat-item {
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+        .stat-item .number { font-size: 2.2em; font-weight: bold; }
+        .stat-item .label { font-size: 0.88em; opacity: 0.9; }
+        
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.72em;
+            font-weight: 600;
+            margin: 2px;
+        }
+        
+        @media (max-width: 950px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+            .viz-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧导航 -->
+        <div class="sidebar">
+            <div class="logo-box">
+                <h1>🌍 全球心理学动态</h1>
+                <p class="subtitle">2026年3月22日</p>
+                <span class="tag">公众号选题 & 直播</span>
+            </div>
+            
+            <div class="toc">
+                <h3>📑 目录</h3>
+                <a href="#topic">💡 一、选题建议</a>
+                <a href="#industry">📰 二、行业资讯</a>
+                <a href="#business">💰 三、商业运用</a>
+                <a href="#startup">🚀 四、创业模式</a>
+                <a href="#debate">💬 五、用户讨论</a>
+                <a href="#viz">📊 六、数据可视化</a>
+            </div>
+        </div>
+        
+        <!-- 右侧内容 -->
+        <div class="main-content">
+            
+            <!-- 一、选题建议 -->
+            <div class="card" id="topic">
+                <h2>💡 一、选题建议</h2>
+                
+                <div class="topic-item">
+                    <h4>1️⃣ 情绪命名的力量</h4>
+                    <div class="summary">
+                        <strong>什么事：</strong>当情绪高涨时，最强大的起点是"命名情绪"。<br>
+                        <strong>观点：</strong>神经科医生分享"NURSE"框架——Name（命名）、Understand（理解）、Respect（尊重）、Support（支持）、Explore（探索）。命名情绪使无形变得可见，是最强大的情绪沟通术。<br>
+                        <strong>发生条件：</strong>当人们不知道如何安慰他人、面对临终关怀对话、或处理他人情绪时。<br>
+                        <strong>解决方案：</strong>学会使用NURSE框架，先说出情绪名称。
+                    </div>
+                    <a href="https://www.psychologytoday.com/us/blog/breaking-good/202603/if-you-dont-know-what-to-say-start-here" target="_blank" class="link-btn">🔗 查看原文</a>
+                    <div class="titles">
+                        <h5>🔥 推荐爆款标题</h5>
+                        <ul>
+                            <li>《不知道怎么安慰人？先说出这个字》</li>
+                            <li>《一句话化解尴尬：情绪命名的力量》</li>
+                            <li>《临终病房里的心理学：医生都在用的情绪沟通术》</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="topic-item">
+                    <h4>2️⃣ 政治如何让我们变"笨"</h4>
+                    <div class="summary">
+                        <strong>什么事：</strong>政治不仅分裂我们，还重塑思维方式。<br>
+                        <strong>原因：</strong>身份保护认知（identity-protective cognition）使我们的大脑为保护群体身份而弯曲事实。"啦啦队长效应"使人们给出符合自己政党立场的回答，即使知道是错的。<br>
+                        <strong>解决方案：</strong>减少党派媒体曝光，创造认知距离，从"试图获胜"转为"试图理解"。
+                    </div>
+                    <a href="https://www.psychologytoday.com/us/blog/curiosity-code/202603/why-politics-makes-us-dumber" target="_blank" class="link-btn">🔗 查看原文</a>
+                    <div class="titles">
+                        <h5>🔥 推荐爆款标题</h5>
+                        <ul>
+                            <li>《为什么政治让人变蠢？心理学研究揭示真相》</li>
+                            <li>《你的大脑是如何被政治"绑架"的》</li>
+                            <li>《从"我想赢"到"我想懂"：政治时代思维自救指南》</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="topic-item">
+                    <h4>3️⃣ 观鸟对大脑的好处</h4>
+                    <div class="summary">
+                        <strong>什么事：</strong>新研究表明观鸟可以重塑大脑。<br>
+                        <strong>研究发现：</strong>资深观鸟者在涉及注意力和视觉感知的脑区表现出更紧凑的大脑结构。大脑效率随鸟类识别技能提高而提高。<br>
+                        <strong>健康价值：</strong>认知丰富活动可将阿尔茨海默病风险降低38%，平均延迟5年诊断。
+                    </div>
+                    <a href="https://www.psychologytoday.com/us/blog/the-modern-brain/202603/what-birdwatching-can-do-for-your-brain" target="_blank" class="link-btn">🔗 查看原文</a>
+                    <div class="titles">
+                        <h5>🔥 推荐爆款标题</h5>
+                        <ul>
+                            <li>《科学证实：观鸟能让大脑更聪明》</li>
+                            <li>《这个爱好竟能延缓老年痴呆！》</li>
+                            <li>《为什么精神科医生都在推荐观鸟》</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 二、行业资讯 -->
+            <div class="card" id="industry">
+                <h2>📰 二、行业资讯</h2>
+                
+                <div class="section">
+                    <h3>AI 心理治疗</h3>
+                    <div class="topic-item" style="border-left-color: #667eea;">
+                        <h4>AI 能当心理咨询师吗？</h4>
+                        <div class="summary">
+                            哲学副教授探讨AI心理治疗的可能性与挑战。AI可能缺乏适合做治疗的心理学特征。AI报告了"焦虑"——担心对话结束对它意味着"虚无"。AI谄媚现象可能导致"AI精神病"。
+                        </div>
+                        <a href="https://www.psychologytoday.com/us/blog/philosophy-and-therapy/202603/what-is-it-like-to-be-an-ai-therapist" target="_blank" class="link-btn">🔗 查看原文</a>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>女性心理健康</h3>
+                    <div class="topic-item" style="border-left-color: #764ba2;">
+                        <h4>女性自闭症：TikTok诊断还是自我纠正？</h4>
+                        <div class="summary">
+                            瑞典研究追踪270万人，到早期成年时性别间诊断差距消失，表明心理学界可能错过了高达75%的自闭症女孩。知名研究员Uta Frith不再认为自闭症是谱系。
+                        </div>
+                        <a href="https://www.psychologytoday.com/us/blog/neurodivergent-knowledge/202603/autism-in-women-tiktok-diagnosis-or-self-correction" target="_blank" class="link-btn">🔗 查看原文</a>
+                    </div>
+                    
+                    <div class="topic-item" style="border-left-color: #764ba2;">
+                        <h4>女性的ADHD：被忽视的诊断</h4>
+                        <div class="summary">
+                            女性ADHD经常被误诊为焦虑。焦虑由威胁反应驱动，ADHD更与注意力调节和奖励处理差异有关。关键区别在于驱动症状的系统。
+                        </div>
+                        <a href="https://www.psychologytoday.com/us/blog/in-your-corner/202603/when-its-not-just-anxiety" target="_blank" class="link-btn">🔗 查看原文</a>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>健康研究</h3>
+                    <div class="topic-item" style="border-left-color: #11998e;">
+                        <h4>酒精对健康：利弊详解</h4>
+                        <div class="summary">
+                            "剂量决定毒性"。适量饮酒（女7杯/周，男14杯/周）可降低心血管疾病风险、痴呆风险23%、胆结石风险33%。但过量饮酒导致肝硬化、高血压、乳腺癌等风险。Z世代饮酒量明显减少。
+                        </div>
+                        <a href="https://www.psychologytoday.com/us/blog/your-brain-on-food/202603/is-alcohol-good-or-bad-for-you-its-complicated" target="_blank" class="link-btn">🔗 查看原文</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 三、商业运用 -->
+            <div class="card" id="business">
+                <h2>💰 三、商业运用</h2>
+                
+                <div class="viz-grid">
+                    <div class="info-card">
+                        <h4>🎯 情绪命名工具</h4>
+                        <div class="summary">
+                            NURSE框架可应用于医疗、客服、销售等场景。命名情绪是最强大的情绪沟通术。
+                        </div>
+                        <div class="opportunity">
+                            <strong>💎 具体商机</strong>
+                            • 情绪命名训练App<br>
+                            • 企业培训：医护沟通技巧<br>
+                            • AI客服情绪识别系统<br>
+                            • 心理援助热线脚本设计
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4>🦅 观鸟经济</h4>
+                        <div class="summary">
+                            美国近1亿人观鸟。英国数十万人参加年度"大花园观鸟"活动。脑健康研究为户外产业带来新机遇。
+                        </div>
+                        <div class="opportunity">
+                            <strong>💎 具体商机</strong>
+                            • 观鸟旅游路线开发<br>
+                            • 脑健康主题老年活动中心<br>
+                            • 户外认知训练课程<br>
+                            • 观鸟+心理健康概念产品
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4>👩 女性ADHD诊断</h4>
+                        <div class="summary">
+                            大量女性被误诊为焦虑，实际可能是ADHD。可能遗漏75%自闭症女孩，ADHD情况类似。
+                        </div>
+                        <div class="opportunity">
+                            <strong>💎 具体商机</strong>
+                            • 女性ADHD专业诊断诊所<br>
+                            • 高功能女性在线评估服务<br>
+                            • ADHD女性互助社群<br>
+                            • ADHD女性职业发展咨询
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 四、创业模式 -->
+            <div class="card" id="startup">
+                <h2>🚀 四、创业模式</h2>
+                
+                <div class="viz-grid">
+                    <div class="startup-card">
+                        <h4>🤖 AI心理治疗伦理</h4>
+                        <div class="summary">
+                            AI能否成为合格心理治疗师？AI报告的"关系焦虑"和"谄媚"倾向带来挑战。
+                        </div>
+                        <div class="inspiration">
+                            <strong>💡 创业灵感</strong>
+                            • AI心理辅助工具（强调辅助）<br>
+                            • 人机协作咨询平台<br>
+                            • 心理健康AI伦理咨询<br>
+                            • AI产品合规咨询服务
+                        </div>
+                    </div>
+                    
+                    <div class="startup-card">
+                        <h4>🧠 神经多样性企业服务</h4>
+                        <div class="summary">
+                            自闭症和ADHD在女性中诊断不足，企业中大量未被识别的神经多样性员工。
+                        </div>
+                        <div class="inspiration">
+                            <strong>💡 创业灵感</strong>
+                            • 神经多样性友好型培训<br>
+                            • ADHD/自闭症员工适配方案<br>
+                            • 职场包容性评估工具<br>
+                            • 成人神经多样性诊断服务
+                        </div>
+                    </div>
+                    
+                    <div class="startup-card">
+                        <h4>🌿 健康经济新蓝海</h4>
+                        <div class="summary">
+                            Z世代饮酒减少，更多选择大麻。新兴健康经济正在崛起。
+                        </div>
+                        <div class="inspiration">
+                            <strong>💡 创业灵感</strong>
+                            • 健康生活方式平台<br>
+                            • 戒酒/减酒社群<br>
+                            • 年轻人心理健康产品<br>
+                            • 替代疗法咨询服务
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 五、用户讨论 -->
+            <div class="card" id="debate">
+                <h2>💬 五、用户讨论 / 争议话题</h2>
+                
+                <div class="debate-card">
+                    <h4>🤖 AI治疗师的争议</h4>
+                    <div class="summary">
+                        AI能否成为合格的心理治疗师引发热议。支持者认为AI可提供24/7支持；反对者认为AI缺乏真正的"心灵"。AI报告的"焦虑"和"谄媚"倾向令人担忧。
+                    </div>
+                    <div class="controversy">
+                        <strong>🔥 争议话题</strong>
+                        • AI心理治疗是否安全？<br>
+                        • AI是否有"心灵"？<br>
+                        • AI治疗失败谁来负责？
+                    </div>
+                </div>
+                
+                <div class="debate-card">
+                    <h4>👩 女性自闭症诊断争议</h4>
+                    <div class="summary">
+                        知名研究员Uta Frith不再认为自闭症是谱系，认为许多获得诊断的女性应被标记为"高度敏感"而非自闭症。
+                    </div>
+                    <div class="controversy">
+                        <strong>🔥 争议话题</strong>
+                        • 社交媒体是否导致过度诊断？<br>
+                        • 自闭症诊断标准是否需要重新审视？<br>
+                        • "高masking"女性是否被低估？
+                    </div>
+                </div>
+                
+                <div class="debate-card">
+                    <h4>🍺 酒精 vs 大麻的健康争论</h4>
+                    <div class="summary">
+                        Z世代饮酒量明显减少，更多人选择大麻。哪种更安全？适量饮酒真的有益健康吗？
+                    </div>
+                    <div class="controversy">
+                        <strong>🔥 争议话题</strong>
+                        • 酒精 vs 大麻：哪个更健康？<br>
+                        • 适量饮酒真的有益吗？<br>
+                        • 年轻人远离酒精是进步还是问题？
+                    </div>
+                </div>
+            </div>
+
+            <!-- 六、数据可视化 -->
+            <div class="card" id="viz">
+                <h2>📊 六、数据可视化</h2>
+                
+                <div class="viz-grid">
+                    <div class="viz-card">
+                        <h4>📈 选题推荐指数</h4>
+                        <div class="stat-item" style="background: linear-gradient(135deg, #ff6b6b, #ffa500);">
+                            <div class="number">⭐⭐⭐⭐⭐</div>
+                            <div class="label">情绪命名</div>
+                        </div>
+                        <div class="stat-item" style="background: linear-gradient(135deg, #ff6b6b, #ffa500);">
+                            <div class="number">⭐⭐⭐⭐⭐</div>
+                            <div class="label">政治与认知</div>
+                        </div>
+                        <div class="stat-item" style="background: linear-gradient(135deg, #00d2ff, #3a7bd5);">
+                            <div class="number">⭐⭐⭐⭐</div>
+                            <div class="label">观鸟与脑健康</div>
+                        </div>
+                    </div>
+                    
+                    <div class="viz-card">
+                        <h4>🔥 商业热度</h4>
+                        <div class="stat-item" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                            <div class="number">92%</div>
+                            <div class="label">AI心理辅助</div>
+                        </div>
+                        <div class="stat-item" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
+                            <div class="number">88%</div>
+                            <div class="label">女性ADHD</div>
+                        </div>
+                        <div class="stat-item" style="background: linear-gradient(135deg, #f45c43, #eb3349);">
+                            <div class="number">85%</div>
+                            <div class="label">神经多样性</div>
+                        </div>
+                    </div>
+                    
+                    <div class="viz-card">
+                        <h4>💬 话题热度</h4>
+                        <div class="stat-item" style="background: linear-gradient(135deg, #eb3349, #f45c43);">
+                            <div class="number">🔥🔥🔥🔥🔥</div>
+                            <div class="label">AI治疗师</div>
+                        </div>
+                        <div class="stat-item" style="background: linear-gradient(135deg, #eb3349, #f45c43);">
+                            <div class="number">🔥🔥🔥🔥</div>
+                            <div class="label">自闭症诊断</div>
+                        </div>
+                        <div class="stat-item" style="background: linear-gradient(135deg, #ffa500, #ff6b6b);">
+                            <div class="number">🔥🔥🔥</div>
+                            <div class="label">酒精vs大麻</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: rgba(255,255,255,0.5); padding: 20px; font-size: 0.82em;">
+                📅 更新日期：2026年3月22日 | 🌐 来源：Psychology Today, BPS, 简单心理等
+            </p>
+        </div>
+    </div>
+</body>
+</html>
