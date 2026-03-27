@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球心理学动态日报 | 2026年3月27日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #e8e8e8;
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        /* 头部 */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #00d4ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .date { color: #888; font-size: 1.1em; }
+        
+        /* 统计卡片 */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .stat-num { font-size: 2em; font-weight: bold; color: #00d4ff; }
+        .stat-label { color: #aaa; margin-top: 5px; }
+        
+        /* 摘要区域 */
+        .summary {
+            background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(0,212,255,0.2));
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .summary h2 { color: #00d4ff; margin-bottom: 15px; font-size: 1.3em; }
+        .summary ul { padding-left: 20px; line-height: 1.8; }
+        
+        /* 分类卡片 */
+        .section { margin-bottom: 25px; }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+        .section-header h2 { font-size: 1.4em; }
+        
+        .topic { background: rgba(255,255,255,0.06); border-radius: 12px; padding: 20px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.08); }
+        .topic h3 { color: #fff; margin-bottom: 10px; font-size: 1.1em; }
+        .topic p { color: #bbb; line-height: 1.7; font-size: 0.95em; }
+        .topic-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .topic-link:hover { text-decoration: underline; }
+        
+        /* 分类颜色 */
+        .recommended { border-color: #f59e0b; }
+        .recommended .section-header { border-color: #f59e0b; }
+        .recommended h2 { color: #f59e0b; }
+        
+        .cases { border-color: #10b981; }
+        .cases .section-header { border-color: #10b981; }
+        .cases h2 { color: #10b981; }
+        
+        .industry { border-color: #3b82f6; }
+        .industry .section-header { border-color: #3b82f6; }
+        .industry h2 { color: #3b82f6; }
+        
+        .business { border-color: #ec4899; }
+        .business .section-header { border-color: #ec4899; }
+        .business h2 { color: #ec4899; }
+        
+        .pain-points { border-color: #ef4444; }
+        .pain-points .section-header { border-color: #ef4444; }
+        .pain-points h2 { color: #ef4444; }
+        
+        /* 可视化时间线 */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #00d4ff, #7c3aed);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 15px;
+            padding-left: 15px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #00d4ff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00d4ff;
+        }
+        
+        /* 标签 */
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            margin-right: 8px;
+            background: rgba(255,255,255,0.1);
+        }
+        .tag-hot { background: rgba(239,68,68,0.3); color: #ef4444; }
+        .tag-new { background: rgba(16,185,129,0.3); color: #10b981; }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧠 全球心理学动态日报</h1>
+            <p class="date">2026年3月27日 · 24小时精选</p>
+        </header>
+
+        <!-- 统计概览 -->
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-num">28</div>
+                <div class="stat-label">今日精选文章</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">6</div>
+                <div class="stat-label">内容分类</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">含原文链接</div>
+            </div>
+        </div>
+
+        <!-- 今日总摘要 -->
+        <div class="summary">
+            <h2>📊 今日概览</h2>
+            <ul>
+                <li><strong>关系与亲密关系：</strong>探讨亲密关系中的沟通模式、童年创伤对关系的影响、以及如何建立健康的依恋关系</li>
+                <li><strong>心理健康与治疗：</strong>关注ADHD/自闭症成人诊断、创伤后应激障碍新疗法、DBT对高敏感人群的疗效</li>
+                <li><strong>社会心理现象：</strong>社交媒体成瘾司法认定、在线体育博彩风险、 Cult文化与男性社区的心理学关联</li>
+                <li><strong>认知与神经科学：</strong>大脑组织结构新理解、"超级老人"认知能力研究、压力对大脑的可塑性影响</li>
+                <li><strong>职业与人生意义：</strong>AI时代的职业身份危机、辞职后的自我认同重建、目标感的科学来源</li>
+            </ul>
+        </div>
+
+        <!-- 推荐选题 -->
+        <div class="section topic recommended">
+            <div class="section-header">
+                <h2>💡 推荐选题</h2>
+                <span class="tag tag-hot">热门</span>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>晚期确诊ADHD/自闭症：被忽视的千万成年人</h3>
+                    <p>数百万成年ADHD或自闭症患者从未在儿童时期被识别。研究揭示了为何延迟诊断现象如此普遍，以及确诊后带来的改变。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/the-late-diagnosed-mind/202603/the-late-diagnosed-mind-adhd-and-autism-in-adults" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>社交媒体成瘾：第一例司法认定</h3>
+                    <p>法院判决认定社交媒体具有成瘾性。如何应对这一公共卫生危机？心理学家提供了科学建议。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/consumer-psychology/202603/what-science-can-teach-us-about-the-pull-of-social-media" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>AI时代的亲密关系：我们正在把情感外包给AI吗？</h3>
+                    <p>人们正以超出理解的速度将情感生活外包给AI。停止越晚，戒断越难。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/the-future-of-intimacy/202603/what-happens-when-we-depend-on-ai-instead-of-each-other" target="_blank">原文链接 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 典型心理案例 -->
+        <div class="section topic cases">
+            <div class="section-header">
+                <h2>🔬 典型心理案例</h2>
+                <span class="tag tag-new">深度</span>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>复杂创伤后应激障碍与limerence（单相思强迫）</h3>
+                    <p>"这不是crush，也不是爱情。但没有人有一个词来描述它到底是什麼。" 现在有了——limerence。这个发现改变了一切。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/the-complex-ptsd-chronicles/202603/how-complex-ptsd-fuels-limerence" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>童年创伤：孩子正在观察你的关系</h3>
+                    <p>你的孩子正在看着你的关系。问题是：你希望他们wish it on them?</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/the-other-side-of-relationships/202603/the-one-question-every-couple-should-ask" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>解离症如何改变治疗规则</h3>
+                    <p>许多治疗师能识别解离症但不确定如何治疗。当解离存在时，标准创伤方法通常需要改变。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/keeping-it-real-and-resilient/202603/when-dissociation-changes-the-rules-of-therapy" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>IFS疗法对PTSD的新突破</h3>
+                    <p>基于IFS的在线团体和个人治疗项目显示出治疗PTSD的希望。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/internal-family-systems-therapy-for-shame-and-guilt/202603/an-ifs-therapy-program-for-ptsd-a" target="_blank">原文链接 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 行业资讯 -->
+        <div class="section topic industry">
+            <div class="section-header">
+                <h2>📢 行业资讯</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>神经科学突破：大脑组织结构的新理解</h3>
+                    <p>神经科学家正在接近对大脑组织方式的丰富新理解。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/the-changing-brain/202603/how-to-think-about-the-brain" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>超级老人(Super-agers)：认知功能保持的秘诀</h3>
+                    <p>许多人害怕随着年龄增长失去认知能力。然而，一些被称为"超级老人"的人在晚年仍保持认知功能。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/what-are-the-chances/202603/are-you-a-super-ager" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>Z世代在线体育博彩风险</h3>
+                    <p>在线体育博彩在年轻人中爆发式增长。March Madness尤其为 reckless behavior提供了巨大机会。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/inside-out-outside-in/202603/online-sports-gambling-risks-among-gen-z-youth" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>情感信念与幸福感</h3>
+                    <p>我们不仅感受情绪。无论是否意识到，我们都在讲述关于情绪的故事。这些被称为"情感信念"。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/your-future-self/202603/emotion-beliefs-and-well-being" target="_blank">原文链接 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 商业运用 -->
+        <div class="section topic business">
+            <div class="section-header">
+                <h2>💼 商业运用</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>DBT对高敏感人群的疗效</h3>
+                    <p>DBT validation敏感度并教授真实技能来管理强烈情绪，建立属于自己的生活。当感到overwhelmed和困在shame中时，DBT带来了希望。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/action-based-dbt/202602/why-dbt-works-so-well-for-highly-sensitive-people" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>时间盒(Time-boxing)找回生活</h3>
+                    <p>你学会了保护工作时间。但家庭、健康和个人目标呢？有时候找回生活的唯一方法是把它们schedule进去。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/decisions-and-the-brain/202603/reclaim-your-personal-life-with-time-boxing" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>自我身份不是"找到"的，而是"构建"的</h3>
+                    <p>还在试图"找到真正的自己"？你可能问错了问题。新研究表明身份不是隐藏等待被发现的东西，而是你构建的。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/unconscious-branding/202603/the-myth-of-finding-your-true-self" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>目标感的科学来源</h3>
+                    <p>尽管生活多样化，人们倾向于从相似的来源获得目标感。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/between-cultures/202603/something-to-live-for-lessons-from-the-science-of-purpose" target="_blank">原文链接 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 用户痛点 -->
+        <div class="section topic pain-points">
+            <div class="section-header">
+                <h2>⚡ 用户痛点</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>男性为什么回避治疗？</h3>
+                    <p>许多男性回避治疗，不是因为他们不在乎，而是因为寻求帮助可能感觉是对身份、尊严、控制感和归属感的威胁。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/restoring-the-equilibrium/202603/why-men-avoid-therapy-and-what-needs-are-at-stake" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>ADHD如何破坏饮食和身体形象</h3>
+                    <p>ADHD、饮食紊乱和身体形象之间的联系可能解释了为什么每天的食物决策会让人感到挑战。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/words-hold-weight/202603/5-ways-adhd-disrupts-eating-and-body-image" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>回避的隐藏代价</h3>
+                    <p>回避现在可能感觉更容易，但它可能正在毁掉你的关系、机会和生活质量。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/all-about-addiction/202603/the-hidden-cost-of-avoiding-hard-conversations" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>没有工作，你是谁？</h3>
+                    <p>随着AI重塑职业，更深层次的问题出现了：beyond your title，你是谁？</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/radical-sabbatical/202603/who-am-i-without-my-job" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>怀疑者的困境</h3>
+                    <p>怀疑是与不确定性相关的不可避免体验。通过练习支持良好决策的建设性形式来避免过度怀疑。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/the-runaway-mind/202603/are-you-caught-in-doubters-dilemma" target="_blank">原文链接 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 社会心理 -->
+        <div class="section topic" style="border-color: #8b5cf6;">
+            <div class="section-header" style="border-color: #8b5cf6;">
+                <h2 style="color: #8b5cf6;">🌐 社会心理现象</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Cult文化与男性社区</h3>
+                    <p>一个年轻男子寻找关于自信和约会建议。他找到的却是一个看起来非常像cult的影响力系统。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/freedom-of-mind/202603/what-cults-teach-us-about-the-manosphere" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>家庭冲突与临终关怀</h3>
+                    <p>当亲人即将离世时，家庭冲突很常见。研究和文学揭示了原因。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/well-read/202603/deathbed-family-conflict" target="_blank">原文链接 →</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>手足疏离：治愈的可能性</h3>
+                    <p>尽管有压力要重新连接，与兄弟姐妹的疏离可以是保持安全、支持心理健康、腾出时间评估痛苦的童年兄弟姐妹动态的方式。</p>
+                    <a class="topic-link" href="https://www.psychologytoday.com/us/blog/the-science-of-siblings/202603/estrangement-from-an-abusive-sibling-can-be-a-chance-to-heal" target="_blank">原文链接 →</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>📅 更新时间：2026年3月27日 · 数据来源：Psychology Today</p>
+            <p style="margin-top:10px; color:#444;">* 本日报基于24小时内全球心理学媒体报道整理</p>
+        </footer>
+    </div>
+</body>
+</html>
