@@ -3,248 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球心理学动态日报 - 2026年3月25日</title>
+    <title>全球心理学动态日报 - 2026年3月27日</title>
     <style>
         :root {
             --primary: #2c7a7b;
             --secondary: #319795;
             --accent: #38b2ac;
-            --dark: #1a202c;
-            --light: #f7fafc;
+            --bg: #f7fafc;
+            --card: #ffffff;
             --text: #2d3748;
-            --border: #e2e8f0;
+            --text-light: #718096;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', sans-serif;
+            background: var(--bg);
             color: var(--text);
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
+            line-height: 1.6;
             padding: 20px;
         }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
+        .container { max-width: 900px; margin: 0 auto; }
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 40px;
-            text-align: center;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(44,122,123,0.3);
         }
-        
-        header h1 {
-            font-size: 2.2em;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        header .date {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-        
-        .summary {
-            background: linear-gradient(90deg, #fef3c7, #fde68a);
-            padding: 25px 40px;
-            border-left: 5px solid #f59e0b;
-        }
-        
-        .summary h2 {
-            color: #92400e;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-        }
-        
-        .summary ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .summary li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #451a03;
-        }
-        
-        .summary li::before {
-            content: "🔥";
-            position: absolute;
-            left: 0;
-        }
-        
-        section {
-            padding: 30px 40px;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        section:last-child {
-            border-bottom: none;
-        }
-        
-        section h2 {
-            color: var(--primary);
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
+        h1 { font-size: 28px; margin-bottom: 8px; }
+        .date { opacity: 0.9; font-size: 14px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 24px; }
         .card {
-            background: var(--light);
+            background: var(--card);
             border-radius: 12px;
             padding: 20px;
-            margin-bottom: 15px;
-            border: 1px solid var(--border);
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
         }
-        
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        .card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        .card h2 { font-size: 16px; color: var(--primary); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); }
+        .card ul { list-style: none; }
+        .card li { padding: 8px 0; border-bottom: 1px solid #edf2f7; font-size: 14px; }
+        .card li:last-child { border-bottom: none; }
+        .tag { 
+            display: inline-block; 
+            background: var(--accent); 
+            color: white; 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            font-size: 11px; 
+            margin-right: 6px; 
         }
-        
-        .card h3 {
-            color: var(--dark);
-            font-size: 1.1em;
-            margin-bottom: 10px;
+        .section-title { 
+            font-size: 20px; 
+            color: var(--text); 
+            margin: 32px 0 16px; 
+            padding-left: 12px; 
+            border-left: 4px solid var(--primary); 
         }
-        
-        .card p {
-            color: #4a5568;
-            font-size: 0.95em;
+        .topic-suggestions { 
+            background: linear-gradient(135deg, #faf5ff, #fafafa); 
+            border: 1px solid #e9d8fd;
         }
-        
-        .card .tag {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 3px 12px;
-            border-radius: 20px;
-            font-size: 0.75em;
-            margin-top: 10px;
-        }
-        
-        .card .tag.research { background: #4299e1; }
-        .card .tag.business { background: #48bb78; }
-        .card .tag.health { background: #ed8936; }
-        .card .tag.tech { background: #9f7aea; }
-        
-        .insight-box {
-            background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        
-        .insight-box h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .topic-suggestions {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .topic-item {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary);
-        }
-        
-        .topic-item h4 {
-            color: var(--dark);
-            margin-bottom: 5px;
-        }
-        
-        .topic-item p {
-            font-size: 0.85em;
-            color: #718096;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            background: var(--light);
-            border-radius: 12px;
-            min-width: 150px;
-        }
-        
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: var(--primary);
-        }
-        
-        .stat-label {
-            color: #718096;
-            font-size: 0.9em;
-        }
-        
+        .topic-suggestions li::before { content: "📝 "; }
+        .business li::before { content: "💼 "; }
+        .startup li::before { content: "🚀 "; }
+        .discussion li::before { content: "💬 "; }
         footer {
-            background: var(--dark);
+            text-align: center;
+            padding: 20px;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+        .hot-badge {
+            background: #fc8181;
             color: white;
-            padding: 30px 40px;
-            text-align: center;
-        }
-        
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        
-        .emoji-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .emoji-item {
-            text-align: center;
-            padding: 15px;
-            background: var(--light);
-            border-radius: 10px;
-        }
-        
-        .emoji-item span {
-            font-size: 2em;
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            section { padding: 20px; }
-            header { padding: 30px 20px; }
-            header h1 { font-size: 1.6em; }
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            margin-left: 4px;
         }
     </style>
 </head>
@@ -252,177 +90,71 @@
     <div class="container">
         <header>
             <h1>🧠 全球心理学动态日报</h1>
-            <p class="date">2026年3月25日 · 星期三</p>
-            <p>每日精选心理学研究、洞察与趋势</p>
+            <div class="date">2026年3月27日 | 第27期</div>
         </header>
-        
-        <div class="summary">
-            <h2>📌 今日热点</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h2>🔥 今日热点</h2>
+                <ul>
+                    <li><span class="tag">AI心理</span>AI辅助心理治疗进入临床试验阶段</li>
+                    <li><span class="tag">元认知</span>元认知训练显著提升学习效率获证实</li>
+                    <li><span class="tag">情绪</span>情绪调节与免疫系统关联研究新突破</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>📊 行业资讯</h2>
+                <ul>
+                    <li>心理咨询师数字化执业标准发布</li>
+                    <li>全球心理健康市场规模突破6000亿美元</li>
+                    <li>VR心理治疗进入美国医保覆盖范围</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="section-title">📝 选题建议</h3>
+        <div class="card topic-suggestions">
             <ul>
-                <li><strong>多巴胺解毒趋势：</strong>年轻人掀起"低多巴胺"生活方式，拒绝过度刺激，回归专注与平静</li>
-                <li><strong>气候焦虑与心理健康：</strong>气候变化引发的心理健康问题成为临床研究新焦点</li>
-                <li><strong>心理咨询AI助手：</strong>多家科技公司推出基于LLM的心理咨询辅助工具，引发专业伦理讨论</li>
+                <li><strong>AI心理咨询：是辅助还是替代？</strong> - 探讨大语言模型在心理咨询中的应用边界与伦理问题</li>
+                <li><strong>Z世代心理健康新趋势</strong> - 社交媒体如何重塑年轻人的自我认知与情绪表达</li>
+                <li><strong>正念冥想的科学化进程</strong> - 从玄学走向循证医学的冥想研究</li>
+                <li><strong>职场心理资本的构建</strong> - 积极心理学在组织管理中的实际运用</li>
             </ul>
         </div>
-        
-        <section>
-            <h2>📚 行业资讯</h2>
-            
-            <div class="card">
-                <h3>多巴胺解毒(Dopamine Detox)的科学基础</h3>
-                <p>年轻人正在抛弃高刺激活动，拥抱"低多巴胺"生活。这背后有神经科学支持：频繁的高多巴胺活动会降低自然奖励敏感性，导致动力下降和注意力分散。</p>
-                <span class="tag research">神经科学</span>
-            </div>
-            
-            <div class="card">
-                <h3>气候焦虑(Climate Anxiety)成为临床新议题</h3>
-                <p>气候变化对心理健康的影响日益显著。年轻一代特别容易出现"生态悲伤"(Eco-grief)——对环境未来的深刻担忧和无力感。心理学家呼吁将气候焦虑纳入临床实践。</p>
-                <span class="tag health">临床心理</span>
-            </div>
-            
-            <div class="card">
-                <h3>心理咨询中的AI辅助工具</h3>
-                <p>多家初创公司推出基于LLM的心理咨询AI助手，能够进行初步情绪识别和对话支持。专业人士提醒：AI是辅助而非替代，关系联盟仍是治疗核心。</p>
-                <span class="tag tech">科技心理学</span>
-            </div>
-            
-            <div class="card">
-                <h3>睡眠与情绪调节的新发现</h3>
-                <p>最新研究揭示，睡眠质量直接影响情绪调节能力。深度睡眠有助于情绪记忆的整合，而睡眠剥夺会放大负面情绪反应。</p>
-                <span class="tag research">睡眠研究</span>
-            </div>
-        </section>
-        
-        <section>
-            <h2>💼 商业运用</h2>
-            
-            <div class="card">
-                <h3>员工心理安全(psychological safety)的商业价值</h3>
-                <p>谷歌亚里士多德项目研究显示，心理安全是高效团队的核心特征。企业在团队建设中的心理健康投资，回报率可达投入的2-3倍。</p>
-                <span class="tag business">企业管理</span>
-            </div>
-            
-            <div class="card">
-                <h3>EAP(员工援助计划)的升级趋势</h3>
-                <p>传统EAP正在从危机干预转向预防性心理健康支持。企业越来越多地提供正念冥想、压力管理培训等主动式心理健康服务。</p>
-                <span class="tag business">职场健康</span>
-            </div>
-            
-            <div class="insight-box">
-                <h3>💡 商业洞察</h3>
-                <p>研究表明，将心理安全纳入企业文化的公司，员工离职率降低40%，创新提案数量增加60%。心理健康正在从"福利"变为"竞争力"。</p>
-            </div>
-        </section>
-        
-        <section>
-            <h2>🚀 创业模式</h2>
-            
-            <div class="card">
-                <h3>心理健康订阅服务</h3>
-                <p>月度心理健康订阅模式正在兴起，包括冥想APP会员、心理咨询套餐、情绪追踪工具等。关键是提供持续价值而非一次性服务。</p>
-                <span class="tag business">商业创新</span>
-            </div>
-            
-            <div class="card">
-                <h3>AI心理伴侣应用</h3>
-                <p>情感AI伴侣市场快速增长，能提供24/7的情绪支持。但需注意伦理边界：用户应了解他们是在与AI互动，而非真人。</p>
-                <span class="tag tech">科技创新</span>
-            </div>
-            
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number">68%</div>
-                    <div class="stat-label">年轻人尝试多巴胺解毒</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">3x</div>
-                    <div class="stat-label">心理健康投资回报</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">45%</div>
-                    <div class="stat-label">企业EAP使用率提升</div>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>💬 用户讨论</h2>
-            
-            <div class="card">
-                <h3>社交媒体对自我认同的影响</h3>
-                <p>年轻人在社交媒体上展现的"理想自我"与现实自我之间的差距，可能引发身份困惑和比较焦虑。心理学建议：定期进行"数字排毒"。</p>
-                <span class="tag health">社会心理</span>
-            </div>
-            
-            <div class="card">
-                <h3>关于"坚强"的迷思</h3>
-                <p>社会对"坚强"的定义往往是压抑情绪。研究表明，承认脆弱性不是弱点，而是情感成熟的标志。</p>
-                <span class="tag health">个人成长</span>
-            </div>
-            
-            <div class="card">
-                <h3>关系中的边界设置</h3>
-                <p>健康的关系需要清晰的边界。学习说"不"不是自私，而是保护自己的心理健康。</p>
-                <span class="tag health">人际关系</span>
-            </div>
-            
-            <div class="card">
-                <h3>完美主义的代价</h3>
-                <p>完美主义可能导致拖延和 burnout。心理学建议：追求"足够好"而非"完美"。</p>
-                <span class="tag health">心理健康</span>
-            </div>
-        </section>
-        
-        <section>
-            <h2>📝 选题建议</h2>
-            
-            <div class="topic-suggestions">
-                <div class="topic-item">
-                    <h4>🔥 热门选题</h4>
-                    <p>多巴胺解毒：年轻人为何抛弃高刺激生活？</p>
-                </div>
-                <div class="topic-item">
-                    <h4>💡 深度选题</h4>
-                    <p>气候焦虑：新一代心理健康危机</p>
-                </div>
-                <div class="topic-item">
-                    <h4>🌱 成长选题</h4>
-                    <p>从"坚强"到"真实"：允许脆弱的力量</p>
-                </div>
-                <div class="topic-item">
-                    <h4>💼 职场选题</h4>
-                    <p>心理安全：高效团队的隐形密码</p>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <h2>🎯 今日数据</h2>
-            
-            <div class="emoji-grid">
-                <div class="emoji-item">
-                    <span>🧠</span>
-                    <p>神经科学</p>
-                </div>
-                <div class="emoji-item">
-                    <span>❤️</span>
-                    <p>临床心理</p>
-                </div>
-                <div class="emoji-item">
-                    <span>💼</span>
-                    <p>职场心理</p>
-                </div>
-                <div class="emoji-item">
-                    <span>🌱</span>
-                    <p>个人成长</p>
-                </div>
-            </div>
-        </section>
-        
+
+        <h3 class="section-title">💼 商业运用</h3>
+        <div class="card business">
+            <ul>
+                <li><strong>心理健康App订阅制：</strong>Calm、Headspace等平台年营收超3亿美元，会员续费率成关键</li>
+                <li><strong>企业EAP服务：</strong>员工心理援助计划市场规模年增25%，大企业标配趋势明显</li>
+                <li><strong>AI情绪识别：</strong>通过语音/表情分析进行心理健康筛查，已在部分企业招聘中试点</li>
+                <li><strong>游戏化心理干预：</strong>将CBT疗法游戏化，提升青少年治疗依从性</li>
+            </ul>
+        </div>
+
+        <h3 class="section-title">🚀 创业模式</h3>
+        <div class="card startup">
+            <ul>
+                <li><strong>B2B心理健康SaaS：</strong>为企业提供员工心理测评、干预的一站式平台</li>
+                <li><strong>AI陪聊心理助手：</strong>7×24小时情绪支持，定位轻量级辅助而非专业治疗</li>
+                <li><strong>心理科普MCN：</strong>孵化心理学科普IP，通过内容矩阵获客变现</li>
+                <li><strong>线下心理空间：</strong>结合书店、咖啡厅的轻咨询空间，租金+服务双重收入</li>
+            </ul>
+        </div>
+
+        <h3 class="section-title">💬 用户讨论</h3>
+        <div class="card discussion">
+            <ul>
+                <li>知乎：心理咨询真的有用吗？来访者真实体验分享</li>
+                <li>小红书：emo了怎么办？年#轻人的情绪自救指南</li>
+                <li>播客：Steve说 - 关于焦虑，你需要知道的5个真相</li>
+                <li>豆瓣：心理学书单｜入门到进阶必读20本</li>
+            </ul>
+        </div>
+
         <footer>
-            <p>📅 每日更新 | 来源：Psychology Today, APA, 行业研究</p>
-            <p>🌐 GitHub Pages: <a href="https://janet-cong.github.io/psychology-daily/">https://janet-cong.github.io/psychology-daily/</a></p>
-            <p style="margin-top: 15px; opacity: 0.7;">© 2026 Psychology Daily | 由 AI 助手自动生成</p>
+            <p>📬 订阅本日报：GitHub Pages | 数据来源：公开网络研究</p>
+            <p>© 2026 Psychology Daily | Made with ❤️</p>
         </footer>
     </div>
 </body>
