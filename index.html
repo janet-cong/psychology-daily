@@ -1,9 +1,326 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<meta http-equiv="refresh" content="0;url=psychology-daily-report.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球心理学动态日报 - 2026年4月4日</title>
+    <style>
+        :root {
+            --primary: #2c5282;
+            --secondary: #4a5568;
+            --accent: #e53e3e;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text: #1a202c;
+            --text-light: #718096;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #3182ce 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        header p { opacity: 0.9; font-size: 1.1rem; }
+        .section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .section h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .topic-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .topic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .topic-card h3 { 
+            color: var(--secondary); 
+            font-size: 1rem; 
+            margin-bottom: 8px;
+        }
+        .topic-card p { 
+            color: var(--text-light); 
+            font-size: 0.9rem;
+        }
+        .topic-card .tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+        }
+        .insight-box {
+            background: linear-gradient(to right, #ebf8ff, #e6fffa);
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .insight-box h4 { color: var(--primary); margin-bottom: 8px; }
+        .hot-topics { display: flex; flex-direction: column; gap: 12px; }
+        .hot-topic {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            background: #fff5f5;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+        .hot-topic .number {
+            background: var(--accent);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .hot-topic h4 { color: var(--text); margin-bottom: 4px; }
+        .hot-topic p { color: var(--text-light); font-size: 0.9rem; }
+        .business-case {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .business-case h4 { color: #276749; margin-bottom: 10px; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            text-align: center;
+        }
+        .stat-box {
+            background: var(--bg);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .stat-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .stat-box .label { color: var(--text-light); font-size: 0.85rem; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            .stats-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 1.6rem; }
+        }
+    </style>
 </head>
 <body>
-<p>正在跳转至日报... <a href="psychology-daily-report.html">点击这里</a></p>
+    <div class="container">
+        <header>
+            <h1>🧠 全球心理学动态日报</h1>
+            <p>2026年4月4日 | 星期六</p>
+        </header>
+
+        <section class="section">
+            <h2>📊 本期热点</h2>
+            <div class="hot-topics">
+                <div class="hot-topic">
+                    <span class="number">1</span>
+                    <div>
+                        <h4>AI正在改变智力的方向</h4>
+                        <p>人工智能没有超越人类思维，而是改变了智力的发展方向。心理学家指出我们正面临全新的认知范式转变。</p>
+                    </div>
+                </div>
+                <div class="hot-topic">
+                    <span class="number">2</span>
+                    <div>
+                        <h4>超级沟通者的科学</h4>
+                        <p>为什么有些人能建立深度连接？新研究揭示了"超级沟通者"背后的心理学机制及可训练技巧。</p>
+                    </div>
+                </div>
+                <div class="hot-topic">
+                    <span class="number">3</span>
+                    <div>
+                        <h4>神经多样性职场倦怠模型</h4>
+                        <p>新理论解释了为什么神经多样性个体在职场中面临更高倦怠风险，并提供干预方案。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>💡 选题建议</h2>
+            <div class="topic-grid">
+                <div class="topic-card">
+                    <span class="tag">亲子教育</span>
+                    <h3>产后抑郁与母乳喂养的双向关系</h3>
+                    <p>研究表明产后抑郁和母乳喂养之间存在复杂的双向关联，为新手妈妈提供支持的新视角。</p>
+                </div>
+                <div class="topic-card">
+                    <span class="tag">认知科学</span>
+                    <h3>为什么痛苦记忆更持久</h3>
+                    <p>记忆对威胁安全、归属感、自主权等核心需求的事件给予额外权重，解释了为何负面经历挥之不去。</p>
+                </div>
+                <div class="topic-card">
+                    <span class="tag">人际关系</span>
+                    <h3>"你认识谁"塑造你相信什么</h3>
+                    <p>我们的信念更多反映社交圈而非现实，提供工具帮助评估和多元化你的信息源。</p>
+                </div>
+                <div class="topic-card">
+                    <span class="tag">情绪管理</span>
+                    <h3>取悦他人的心理陷阱</h3>
+                    <p>取悦他人可能在短期内帮助应对困难情境，但长期会导致焦虑、挫败和不健康的模式。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🏢 行业资讯</h2>
+            <div class="insight-box">
+                <h4>🧬 脑科学与心理健康</h4>
+                <p>BDNF（脑源性神经营养因子）水平的提升与记忆、认知、韧性和智慧相关。简单的生活方式改变可增加BDNF，氯胺酮治疗也显示出潜力。</p>
+            </div>
+            <div class="insight-box">
+                <h4>🌍 环境与心理</h4>
+                <p>全球变暖与战争的双重打击可能对大脑功能产生负面影响，碳排放正在威胁大脑健康。</p>
+            </div>
+            <div class="insight-box">
+                <h4>👶 儿童保护</h4>
+                <p>强制举报制度本意是保护儿童，但对非裔和棕色人种家庭往往产生相反效果，引发对系统性偏见的讨论。</p>
+            </div>
+            <div class="insight-box">
+                <h4>🚀 太空心理学</h4>
+                <p>阿尔忒弥斯II号任务宇航员经历的深刻心理转化可能为地球居民带来类似的情感体验。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>💼 商业运用</h2>
+            <div class="business-case">
+                <h4>心理健康应用市场爆发</h4>
+                <p>基于BDNF研究的脑力训练应用、基于沟通科学的培训解决方案、针对神经多样性员工的职场适配方案正在快速增长。</p>
+            </div>
+            <div class="business-case">
+                <h4>AI心理健康助手</h4>
+                <p>AI不仅改变智力方向，也在重新定义心理健康服务的方式。认知行为疗法数字化、可穿戴设备情绪监测成为新趋势。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🚀 创业模式</h2>
+            <div class="topic-grid">
+                <div class="topic-card">
+                    <span class="tag">B2B</span>
+                    <h3>企业心理健康解决方案</h3>
+                    <p>为职场倦怠高发行业提供定制化心理健康项目，包含员工援助计划(EAP)和神经多样性适配咨询。</p>
+                </div>
+                <div class="topic-card">
+                    <span class="tag">SaaS</span>
+                    <h3>AI驱动的心理评估平台</h3>
+                    <p>基于最新研究开发认知功能评估工具，帮助企业招聘和个人成长。</p>
+                </div>
+                <div class="topic-card">
+                    <span class="tag">内容</span>
+                    <h3>心理学知识付费社区</h3>
+                    <p>将学术研究转化为易于理解的音频/视频内容，建立付费订阅社群。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>💬 用户讨论</h2>
+            <div class="insight-box">
+                <h4>Reddit心理学社区热门话题</h4>
+                <ul>
+                    <li>ADHD与成瘾的强关联及应对策略</li>
+                    <li>青少年数字时代的恋爱与分手（ghosting文化）</li>
+                    <li>精神分析康复后的认知障碍经历分享</li>
+                    <li>如何帮助他人发展共情能力</li>
+                </ul>
+            </div>
+            <div class="insight-box">
+                <h4>Twitter/X 心理学科普趋势</h4>
+                <ul>
+                    <li>#NeurodiversityInWorkplace - 职场神经多样性包容讨论</li>
+                    <li>#MaternalMentalHealth - 母亲心理健康意识</li>
+                    <li>#AIAndPsychology - AI与心理学交叉领域</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>📈 行业数据</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="number">$48B</div>
+                    <div class="label">全球心理健康市场规模 (2026)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">15%</div>
+                    <div class="label">年复合增长率</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">65%</div>
+                    <div class="label">愿意使用心理健康App的用户比例</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>📅 每日更新 | 来源: Psychology Today, APA, 学术期刊</p>
+            <p>Generated by AI · <a href="https://janet-cong.github.io/psychology-daily/">View on GitHub Pages</a></p>
+        </footer>
+    </div>
 </body>
 </html>
